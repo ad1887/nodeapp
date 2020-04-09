@@ -13,13 +13,6 @@ router.get('/', function(req, res){
     });
 });
 
-router.get('/todos', function(req, res){
-    res.status(200).send({
-        'status' : true,
-        'data': todos
-    });
-});
-
 // Import employee controller
 var employeeController = require('./employee/employeeController');
 // Contact routes
@@ -31,6 +24,13 @@ router.route('/employee/:emp_id')
     // .patch(contactController.update)
     // .put(contactController.update)
     // .delete(contactController.remove);
+
+// Import employee controller
+var userController = require('./user/userController');
+// Contact routes
+router.route('/user')
+    .get(userController.index)
+    .post(userController.add);
 
 // Import contact controller
 var csvController = require('./csv/csvController');
