@@ -5,7 +5,7 @@ const qs = require('querystring');
 const express = require('express');
 const routes = require('./api-routes');
 // const parser = require('body-parser');
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
